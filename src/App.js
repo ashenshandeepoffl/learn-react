@@ -1,23 +1,16 @@
 import './App.css';
 
 function App() {
-  const name = "Ashen";
+
+  const age = 19;
+  const isGreen = false;
+
   return (
     <div className="App">
-      <User name = "Ashen" age = {22} email = "ashen@gmail.com"/>
-      <User name = "Zaynab" age = {22} email = "zaynab@gmail.com"/>
+      {age >= 18 ? <h1>Over Age</h1> : <h1>Under Age</h1>}
+      <h1 style = {{color: isGreen ? "green" : "red"}}>Color</h1>
+      
     </div>
   );
 }
-
-const User = (props) => {
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      <h1>{props.age}</h1>
-      <h1>{props.email}</h1>
-    </div>
-  )
-}
-
 export default App;
