@@ -1,14 +1,27 @@
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  const [count, setCount] = useState(0);
 
-  const age = 19;
-  const isGreen = false;
+  const increaseCount = () => {
+    setCount(count + 1);
+  }
+
+  const decreaseCount = () => {
+    setCount(count - 1);
+  }
+
+  const setToZero = () => {
+    setCount(0)
+  }
 
   return (
     <div className="App">
-      {age >= 18 ? <h1>Over Age</h1> : <h1>Under Age</h1>}
-      <h1 style = {{color: isGreen ? "green" : "red"}}>Color</h1>
+      {count}
+      <button onClick={increaseCount}>Increase</button>
+      <button onClick={decreaseCount}>Decrease</button>
+      <button onClick={setToZero}>Set to Zero</button>
       
     </div>
   );
